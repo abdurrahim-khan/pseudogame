@@ -1,0 +1,66 @@
+.mainframe{
+    height: 600px;
+    width: 800px;
+    background-color: aqua;
+    margin: 30px;
+}
+.box{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    margin-left: 150px;
+}
+.enemy{
+    
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.one{
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+}
+.two{
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+.three{
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+
+.player{
+    display: inline-block;
+    transform: translate(0px,275px);
+    height: 80px;
+    width: 80px;
+    background-color: darkblue;
+    animation-name: move;
+    animation-play-state: paused;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes bounce {
+    50%{
+        transform: translateY(500px);
+    }
+    
+}
+@keyframes move {
+    0%{
+        transform: translateX(0px) translateY(275px);
+    }
+    50%{
+        transform: translateX(720px) translateY(275px);
+    }
+    100%{
+        transform: translateX(0px) translateY(275px);
+    }
+   
+}
+.mainframe:active .player{
+    animation-play-state: running;
+}
